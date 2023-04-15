@@ -1,0 +1,39 @@
+Troubleshooting
+
+1) find busybox
+"kubectl get pods"
+- show all pods such as busybox in the default namespace
+
+to see if the application (that is not published online) is working:
+- i)find a pod's IP address through spinning up busypot
+- ii) use Wget to make a get request 
+
+2) connect to a busybox shell
+"kubectl exec -it <busybox name> -- /bin/sh"
+
+
+3) open a new terminal and find ip addresses of pots:
+"kubectl get pods -n <development> -o wide"
+
+4) return to busybox shell terminal
+"wget <ip address of pot>"
+to check if the traffic is working 
+
+
+
+types of error:
+wget: can't cannot to remote host -> need to specify port container interacts with
+wget: can't open "index.html": File exists -> delete the file by rm index.html
+then run again
+
+wget defaults to port 80 if no port is specified in yaml
+
+
+valid namespace YAML:
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mynamespace
+
+ 
