@@ -22,7 +22,7 @@ to check if the traffic is working
 
 
 types of error:
-wget: can't cannot to remote host -> need to specify port container interacts with
+wget: can't connect to remote host -> need to specify port that container interacts with
 wget: can't open "index.html": File exists -> delete the file by rm index.html
 then run again
 
