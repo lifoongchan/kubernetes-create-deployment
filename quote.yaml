@@ -1,0 +1,25 @@
+---
+# create a new deployment
+apiVersion: apps/v1 # api group being sent a request to
+kind: Deployment # type of kubertes object we want to create
+metadata:
+  name: quote-service #pod name that specified to be in deployment namespace
+  namespace: development
+  labels:
+    app: quote-service
+spec: # make highly-available
+  replicas: 2 # how many replicas of containers we want to run
+  selector:
+    matchLabels:
+      app: quote-service
+  template:
+    metadata:
+      labels:
+        app: quote-service
+    spec:
+      containers: # specific details of containers we want to run 
+      - name: quote-container
+        image: datawire/quote:0.5.0 
+        ports:
+        - containerPort: 8080 
+ 
