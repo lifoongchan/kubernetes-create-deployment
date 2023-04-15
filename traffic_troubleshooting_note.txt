@@ -29,7 +29,7 @@ then run again
 wget defaults to port 80 if no port is specified in yaml
 
 
-valid namespace YAML:
+valid (formate of )namespace in YAML:
 ---
 apiVersion: v1
 kind: Namespace
