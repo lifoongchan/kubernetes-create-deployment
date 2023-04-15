@@ -16,7 +16,7 @@ to see if the application (that is not published online) is working:
 "kubectl get pods -n <development> -o wide"
 
 4) return to busybox shell terminal
-"wget <ip address of pot>"
+"wget <ip address of pot>:<port number>"
 to check if the traffic is working 
 
 
